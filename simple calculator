@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+ 
+ //function 
+ double calculation(char x, double y,double z){
+ 	double result;
+ 	
+ 	switch(x){
+ 		
+ 		case '+':
+ 			result = y + z;
+ 			break;
+ 		case '*':
+ 			result = y * z;
+ 			break;
+ 		case '/':
+ 			if (z==0)
+ 			 printf("can't devide by 0");
+ 			else result = y / z;
+ 			break;
+ 	
+ 		case'-':
+ 			result = y - z;
+ 			break;
+ 		case'%':
+		    result = (int)y % (int)z;
+			break;	
+
+	 }
+return result;
+
+ 	
+ 	
+ 	
+ }
+ 
+int main(){
+	
+	 char operation;
+	 double one,two;
+	 
+	 printf("Enter the operation (+,-,/,*,%) _");
+	 scanf("%c", &operation);
+	 if(operation=='+'||operation=='-'||operation=='*'||operation=='%'||operation=='/'){
+	 
+	 printf("Enter the number one and two-");
+	 scanf("%lf %lf",&one,&two);
+	 double result = calculation(operation,one,two);
+	 printf("%.2lf %c %.2lf = %.2lf\n",one,operation,two,result);
+	 
+	
+return 0;
+}else printf("ERROR-  'False operation'");
+}
